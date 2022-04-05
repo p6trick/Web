@@ -1,0 +1,105 @@
+.Home {
+	font-size: 40px;
+	color: deepskyblue;
+	text-align: center;
+	background-color: limegreen;
+	margin: 20px;
+	margin-bottom: 90px;
+	box-shadow: 10px 10px 20px 10px rgba(230,70,130,1);
+	width: 780px;
+}
+
+.list {
+	font-size: 20px;
+	color: red;
+	border: 6px solid #F3F937;
+	width: 200px;
+	height: 90px;
+	padding: 10px;
+	margin: 10px;
+}
+
+body, h1 {
+	padding: 0px;
+	margin: 0px;
+
+}
+
+.mainbox {
+	border: 3px dotted black;
+	background-color: lightcyan;
+	width: 100%;
+}
+
+.title {
+	font-weight: bolder;
+	color: purple;
+	font-size: 30px;
+	margin-left: 20px;
+
+}
+
+
+.p1 {
+	border-right: 6px dotted hotpink;
+		
+	float: left;
+	max-width: 100%;
+	
+	
+}
+
+.p2 {
+	
+	border-left: 6px dotted hotpink;
+	float: right;
+	
+	max-width: 100%;
+	
+	
+
+}
+
+.p3 {
+
+	
+	height: 250px;
+	text-align: center;
+	max-width: 100%;
+	
+}
+
+.p3 iframe {
+	}
+
+.pic-wrap {
+	overflow: hidden;
+	width: 760px;
+	height: auto;
+	border: 6px dotted hotpink;
+	margin: 20px;
+	
+}
+
+.maybe {
+	width: auto;
+}
+
+.prg {
+	color: orange;
+	font-size: 20px;
+	border: 6px dotted skyblue;
+	padding: 20px;
+	margin: 20px;
+	width: 720px;
+}
+
+.p_prg {
+	color: hotpink;
+	font-size: 20px;
+}
+
+.n_prg {
+	color: saddlebrown;
+	font-size: 20px;
+}
