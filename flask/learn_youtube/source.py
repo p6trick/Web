@@ -17,33 +17,47 @@ topics = [
 # 일반적으로 데이터는 데이터베이스에 저장한다.
 # 위의 리스트를 데이터베이스에서 읽어온다.
 
-@app.route('/')
-def index():
-    liTags = ''
-    for topic in topics:
-        #liTags = liTags + '<li>' + topic['title'] + '</li>'
-        liTags = liTags + f'<li>><a href="/read/{topic["id"]}/"> {topic["title"]} </a></li>'
-    return f'''<!doctype html>
+def template(contents,content):
+        return f'''<!doctype html>
     <html>
         <body>
         <h1><a href="/">WEB</a></h1>
         <ol>
-            {liTags}
+            {contents}
         </ol>
-        <h2>Welcom</h2>
-        Hello, Web
+        {content}
     </body>
 </html>
 '''
+
+def getContents():
+    liTags = ''
+    for topic in topics:
+        #liTags = liTags + '<li>' + topic['title'] + '</li>'
+        liTags = liTags + f'<li><a href="/read/{topic["id"]}/"> {topic["title"]} </a></li>'
+    return liTags
+
+@app.route('/')
+def index():
+    
+    
+    return template(getContents(),'<h2>Welcome</h2>Hello, WEB')
 
 
 @app.route('/create/')
 def create():
     return 'Create'
 
-@app.route('/read/<id>/')
+@app.route('/read/<int:id>/') #자동으로 int로 변환
 def read(id):
-    print(id)
-    return 'Read '+id
+    title = ''
+    body=''
+    for topic in topics:
+        if id == topic['id']:
+            title = topic['title']
+            body = topic['body']
+            break
+   
+    return template(getContents(), f'<h2>{title}</h2>{body}')
 
 app.run(debug=True)
